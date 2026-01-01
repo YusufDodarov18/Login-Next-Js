@@ -14,6 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
       localization={tjLocalization} 
       appearance={{
         elements: {
@@ -27,10 +28,10 @@ export default function RootLayout({
         <body>
           <header className="flex justify-end items-center p-4 gap-4 h-16">
             <SignedOut>
-              <SignInButton mode="modal">
+              <SignInButton>
                 <button className="text-gray-600 font-medium">Ворид шудан</button>
               </SignInButton>
-              <SignUpButton mode="modal">
+              <SignUpButton>
                 <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5">Бақайдгирӣ</button>
               </SignUpButton>
             </SignedOut>
